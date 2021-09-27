@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Concentration Game</title>
+    <link rel="stylesheet" type="text/css" href="src/css/reset.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="src/css/styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"
+    ></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="src/js/nanoid.js"></script>
+    <script defer src="src/js/script.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav>
+        <ul>
+          <li><a href="#" class="active">[Concentration]</a></li>
+          <li>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#rulesModal"
+              >Rules</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="cards-grid-container">
+        <div class="active-game-data">
+          <h3>
+            Number of active pictures:
+            <span class="badge bg-secondary" id="numberOfPictures"></span>
+          </h3>
+          <h3>Lives left: <span id="numberOfLives"></span></h3>
+        </div>
+        <div class="difficulty-level">
+          <h4>Choose a difficulty level:</h4>
+          <button type="button" class="btn btn-success" data-difficulty="easy">
+            Easy
+          </button>
+          <button
+            type="button"
+            class="btn btn-warning"
+            data-difficulty="medium"
+          >
+            Medium
+          </button>
+          <button type="button" class="btn btn-danger" data-difficulty="hard">
+            Hard
+          </button>
+        </div>
+        <main class="grid" id="cards-container"></main>
+        <div id="game-over"></div>
+      </div>
+    </div>
+    <!-- Rules Modal Start -->
+    <div
+      class="modal fade"
+      id="rulesModal"
+      tabindex="-1"
+      aria-labelledby="concentrationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="concentrationModalLabel">
+              Concentration Game Rules
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Concentration is a card game in which all of the cards are laid
+              face down on a surface and two cards are flipped face up over each
+              turn.
+            </p>
+            <p>
+              The goal of the game is to turn over pairs of matching cards.
+            </p>
+            <p>
+              Upon turning up one card, players with good memory will be able to
+              remember where they have already seen its pair.
+            </p>
+            <p>
+              Depending on the level of difficulty (Easy, Medium or Hard), you
+              will be assigned a certain number of card pairs, and a certain
+              number of lives. To win the game, you need to find all the pairs
+              before you run out of lives.
+            </p>
+            <p>Good luck!</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rules Modal End -->
+    <!-- One Game Card Template Start -->
+    <template id="card-template">
+      <article class="flip">
+        <div class="front">
+          <img
+            src="./src/img/blackhole.jpg"
+            alt="Front picture"
+            class="picture picture-front"
+          />
+        </div>
+        <div class="back">
+          <img
+            src="https://picsum.photos/600/400?image=1015"
+            alt="Back picture"
+            class="picture picture-back"
+          />
+        </div>
+      </article>
+    </template>
+    <!-- One Game Card Template End -->
+  </body>
+</html>

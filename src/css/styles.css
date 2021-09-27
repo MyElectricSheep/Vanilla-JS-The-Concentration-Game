@@ -1,3 +1,7 @@
+.main-container {
+  min-height: 100vh;
+}
+
 /* NAV SECTION */
 
 nav {
@@ -43,7 +47,6 @@ a:hover {
 a.active:hover {
   color: black;
 }
-
 /* END OF NAV SECTION */
 
 /* CARDS GRID SECTION */
@@ -156,3 +159,42 @@ a.active:hover {
 .selected {
   filter: brightness(0.8) hue-rotate(350deg) saturate(3) blur(8px) contrast(0.6);
 }
+
+/* FOOTER SECTION */
+
+footer {
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  bottom: 0;
+  z-index: 1;
+}
+
+footer ul {
+  display: flex;
+  margin: 0;
+  padding: 0 100px;
+  justify-content: flex-start;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li a {
+  display: block;
+  color: #fff;
+  padding: 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 49px;
+}
+
+footer ul li a.active {
+  background: #f00;
+}
+
+/* END OF FOOTER SECTION */

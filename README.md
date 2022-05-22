@@ -14,4 +14,4 @@ Depending on the level of difficulty (Easy, Medium or Hard), you will be assigne
 
 # 🚀 Live version
 
-A [Live version of the app](https://concentration-game.vercel.app/) can be found here!
+A [Live version of the app](https://concentration.ben.express/) can be found here!
